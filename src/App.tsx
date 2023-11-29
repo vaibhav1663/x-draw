@@ -5,14 +5,13 @@ import { useYjsStore } from './useYjsStore'
 const HOST_URL =
 	import.meta.env.MODE === 'development'
 		? 'ws://localhost:1234'
-		: process.env.REACT_APP_WEBSOCKET_ENDPOINT
+		: import.meta.env.VITE_WEBSOCKET_ENDPOINT
 
 export default function YjsExample() {
 	const store = useYjsStore({
 		roomId: 'example17',
 		hostUrl: HOST_URL,
 	})
-
 	return (
 		<div className="tldraw__editor">
 			<Tldraw autoFocus store={store} shareZone={<NameEditor />} />

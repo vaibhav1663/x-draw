@@ -24,7 +24,7 @@ export function useYjsStore({
 	roomId = 'example',
 	hostUrl = import.meta.env.MODE === 'development'
 		? 'ws://localhost:1234'
-		: process.env.REACT_APP_WEBSOCKET_ENDPOINT,
+		: process.env.VITE_WEBSOCKET_ENDPOINT,
 	shapeUtils = [],
 }: Partial<{
 	hostUrl: string
